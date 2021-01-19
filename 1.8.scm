@@ -1,6 +1,6 @@
 (define (cbrt x) 
   (define (cbrt-iter x guess guess-prev)
-    (define (good-enough?) (< (abs (- guess guess-prev)) 0.001))
+    (define (good-enough?) (= guess guess-prev))
     (define (improve) (/ (+ (/ x (* guess guess)) (* 2 guess)) 3))
     (if (good-enough?)
         guess
